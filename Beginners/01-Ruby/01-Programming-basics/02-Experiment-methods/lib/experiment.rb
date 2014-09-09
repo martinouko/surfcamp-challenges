@@ -11,6 +11,7 @@ end
 def belongs_to?(a_string, a_word)
   # TODO: return true if a_string contains a_word
   # example: belongs_to?("hey jude", "jude") => true
+  "hey jude".include? "jude"
 end
 
 def replace(initial_string, old_letter, new_letter)
