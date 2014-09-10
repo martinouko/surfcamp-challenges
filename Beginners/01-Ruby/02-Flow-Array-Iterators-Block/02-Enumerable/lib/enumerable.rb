@@ -21,12 +21,12 @@ puts short_words(array_string, max_length)
 
 limit = 3
 def first_under(array, limit)
-  array.detect  { |i| i < limit }
+  array.detect  { |number| number < limit }
 end
 puts first_under(array, limit) 
 
 def add_bang(array_string)
-  array_string.map { |i| i + "!"}
+  array_string.map { |word| word + "!"}
 end
 puts add_bang(array_string)
     
@@ -36,8 +36,11 @@ end
 puts product(array)
  
 def sorted_pairs(array_string)
-  slice = [array_string.each_slice(2) { |i| p i }]
-  sort = slice.sort  
+  result = []
+  array_string.each_slice(2) do |slice| 
+    result << slice.sort
+  end
+  return result
 end
-puts sorted_pairs(array_string).sort
+p sorted_pairs(array_string)
 
