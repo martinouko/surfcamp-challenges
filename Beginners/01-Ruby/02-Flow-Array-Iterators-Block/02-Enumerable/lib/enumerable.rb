@@ -1,8 +1,14 @@
+array = [1,2,3,4,5,6,7,8,9,10]
+
 def sum_odd_indexed(array)
+  array.values_at(*array.each_index.select{|i| i.odd?}).map{|i| i.to_i}.inject(&:+)
+    
   # TODO: computes the sum of elements at odd indices (1, 3, 5, 7, etc.) 
   #       You should make use Enumerable#each_with_index
 end
  
+puts sum_odd_indexed(array)
+
 def even_numbers(array)
   # TODO: Return the even numbers from a list of integers.
   #       You should use Enumerable#select
