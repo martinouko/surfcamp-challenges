@@ -18,20 +18,22 @@ MENU = {
 
 
 def poor_calories_counter(burger, side, beverage)
+  #TODO: return number of calories for this mcDonald order
   CALORIES[burger] + CALORIES[side] + CALORIES[beverage]
 end
 
 
 def calories_counter(*orders)
+  #TODO: return number of calories for a less constrained order
   sum = 0
   orders.each do |order|
     if MENU.keys.include? order
-      sum += MENU[order].map {|meal| CALORIES|meal|}.reduce(:+)
-    else 
+      sum += MENU[order].map {|meal| CALORIES[meal]}.reduce(:+)
+    else
       sum += CALORIES[order]
+    end
   end
-  end
-    sum
+  sum
 end
 
-  puts calories_counter("Happy Meal", "Sprite")
+puts calories_counter("Sprite", "Best Of Big Mac")
